@@ -3,56 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baixe o Jogo</title>
+    <title>Exemplo de Código</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            height: 100vh; 
-            margin: 0; 
-            display: flex;
-            justify-content: center;
-            align-items: center; 
-            background: linear-gradient(135deg, #6e7efc, #a77dc2);
-            color: white; 
+            height: 100vh; /* Altura total da janela */
+            margin: 0; /* Remove margens padrão */
+            display: flex; /* Flexbox para centralização */
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Centraliza verticalmente */
+            background: linear-gradient(135deg, #6e7efc, #a77dc2); /* Fundo degradê */
+            color: white; /* Cor do texto */
         }
         .container {
-            text-align: center;
-            padding: 20px; 
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 10px; 
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+            text-align: center; /* Centraliza o texto */
+            padding: 20px; /* Espaçamento interno */
+            background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
+            border-radius: 10px; /* Bordas arredondadas */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra */
+            max-width: 90%; /* Largura máxima de 90% para telas menores */
+            width: 400px; /* Largura fixa em telas maiores */
         }
         pre {
             background-color: #f4f4f4;
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
-            color: black; 
-            overflow-x: auto; 
+            color: black; /* Cor do texto do código */
+            overflow-x: auto; /* Permite rolagem se o texto for muito longo */
         }
         .download-button {
             margin-top: 20px;
             padding: 10px 15px;
             font-size: 16px;
-            background-color: #28a745; 
-            color: white; 
-            border: none;
-            border-radius: 5px; 
-            cursor: pointer; 
-            transition: background-color 0.3s;
+            background-color: #28a745; /* Cor do botão */
+            color: white; /* Cor do texto do botão */
+            border: none; /* Remove borda padrão */
+            border-radius: 5px; /* Bordas arredondadas */
+            cursor: pointer; /* Cursor de mão ao passar sobre o botão */
+            transition: background-color 0.3s; /* Transição suave para mudança de cor */
         }
         .download-button:hover {
-            background-color: #218838; 
+            background-color: #218838; /* Cor do botão ao passar o mouse */
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            .container {
+                width: 100%; /* Aumenta a largura em telas muito pequenas */
+                padding: 15px; /* Ajuste do espaçamento interno */
+            }
+            pre {
+                font-size: 14px; /* Ajusta o tamanho da fonte do código */
+            }
+            .download-button {
+                font-size: 14px; /* Diminui o tamanho do botão */
+                padding: 8px 12px; /* Ajusta o espaçamento interno do botão */
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Baixe o Código</h1>
+        <h1>Exemplo de Código</h1>
+        
+        <pre><code>console.log("Olá, mundo!");</code></pre>
 
-        <a href="FlappyBird.rar" download>
-        <button class="download-button">Baixar Arquivo</button>
-    </a>
+        <a href="seu_arquivo.txt" download>
+            <button class="download-button">Baixar Arquivo</button>
+        </a>
     </div>
 </body>
 </html>
