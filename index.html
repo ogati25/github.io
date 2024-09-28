@@ -3,37 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo de Código</title>
+    <title>Baixe o Jogo</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            height: 100vh; 
+            margin: 0; 
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            background: linear-gradient(135deg, #6e7efc, #a77dc2);
+            color: white; 
+        }
+        .container {
+            text-align: center;
+            padding: 20px; 
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px; 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
         }
         pre {
             background-color: #f4f4f4;
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
+            color: black; 
+            overflow-x: auto; 
         }
         .download-button {
             margin-top: 20px;
             padding: 10px 15px;
             font-size: 16px;
-            background-color: #28a745;
-            color: white;
+            background-color: #28a745; 
+            color: white; 
             border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            border-radius: 5px; 
+            cursor: pointer; 
+            transition: background-color 0.3s;
         }
         .download-button:hover {
-            background-color: #218838;
+            background-color: #218838; 
         }
     </style>
 </head>
 <body>
-    <h1>Exemplo de Código</h1>
-    
-    <pre><code>console.log("Olá, mundo!");</code></pre>
+    <div class="container">
+        <h1>Baixe o Código</h1>
+
+        <a href="seu_arquivo.txt" download>
+            <button class="download-button">Baixar Arquivo</button>
+        </a>
+    </div>
+</body>
+</html>
 
     <a href="FlappyBird.rar" download>
         <button class="download-button">Baixar Arquivo</button>
