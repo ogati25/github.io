@@ -1,75 +1,274 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baixe o Jogo</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>CaraMellowPets</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            height: 100vh; /* Altura total da janela */
-            margin: 0; /* Remove margens padrão */
-            display: flex; /* Flexbox para centralização */
-            justify-content: center; /* Centraliza horizontalmente */
-            align-items: center; /* Centraliza verticalmente */
-            background: linear-gradient(135deg, #6e7efc, #a77dc2); /* Fundo degradê */
-            color: white; /* Cor do texto */
-        }
-        .container {
-            text-align: center; /* Centraliza o texto */
-            padding: 20px; /* Espaçamento interno */
-            background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
-            border-radius: 10px; /* Bordas arredondadas */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra */
-            max-width: 90%; /* Largura máxima de 90% para telas menores */
-            width: 400px; /* Largura fixa em telas maiores */
-        }
-        pre {
-            background-color: #f4f4f4;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            color: black; /* Cor do texto do código */
-            overflow-x: auto; /* Permite rolagem se o texto for muito longo */
-        }
-        .download-button {
-            margin-top: 20px;
-            padding: 10px 15px;
-            font-size: 16px;
-            background-color: #28a745; /* Cor do botão */
-            color: white; /* Cor do texto do botão */
-            border: none; /* Remove borda padrão */
-            border-radius: 5px; /* Bordas arredondadas */
-            cursor: pointer; /* Cursor de mão ao passar sobre o botão */
-            transition: background-color 0.3s; /* Transição suave para mudança de cor */
-        }
-        .download-button:hover {
-            background-color: #218838; /* Cor do botão ao passar o mouse */
+        @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Poetsen+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+        :root {
+            --cor-texto: #30b212;
+            --cor-textohover: #3cd31aad;
+            --cor-fundo: #c0de86;
+            --cor-fundo1: #fdffb9;
+            --cor-fundo2: #d8eeac;
+            --cor-links: #3ba9d2;
+            --cor-linkshover: #167699;
+            --cor-marrom1: #ab6d3c;
+            --cor-marrom2: #ad7e54;
+            --cor-amarelo: #bca41c;
+            --cor-grad1: #fcfe86;
+            --cor-grad2:#d8d995;
         }
 
-        /* Responsividade */
-        @media (max-width: 600px) {
-            .container {
-                width: 100%; /* Aumenta a largura em telas muito pequenas */
-                padding: 15px; /* Ajuste do espaçamento interno */
-            }
-            pre {
-                font-size: 14px; /* Ajusta o tamanho da fonte do código */
-            }
-            .download-button {
-                font-size: 14px; /* Diminui o tamanho do botão */
-                padding: 8px 12px; /* Ajusta o espaçamento interno do botão */
-            }
+        body {
+            background-color: #f0f8dd;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Cabeçalho */
+        .cabecalho {
+            background: linear-gradient(to bottom, var(--cor-grad1), var(--cor-grad2));
+            height: 200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .logo img {
+            height: 150px;
+            width: 150px;
+        }
+        .search-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 40px;
+            padding: 0 15px;
+            border: 1px solid var(--cor-texto);
+        }
+        .search-text {
+            border: none;
+            outline: none;
+            font-size: 14px;
+            padding: 10px;
+            width: 200px;
+        }
+        .search-button {
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+        .cabecalho1 { 
+            display: flex;
+            justify-content: flex-end; 
+            margin-left: auto; 
+            margin-right: 40px;
+        }
+        .cabecalho a {
+            text-decoration: none;
+            color: #000;
+            font-size: 16px;
+            margin-left: 20px; 
+        }
+        .cabecalho a:hover {
+            color: var(--cor-texto);
+        }
+
+        /* Navegação */
+        .barranavegacao {
+            background-color: var(--cor-fundo1);
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            border-bottom: 2px solid var(--cor-texto);
+            border-top: 2px solid var(--cor-texto);
+        }
+        .barranavegacao ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .barranavegacao ul li {
+            position: relative;
+            margin: 0 40px;
+        }
+        .barranavegacao ul li a {
+            text-decoration: none;
+            padding: 20px 15px;
+            color: #000;
+            font-size: 18px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .barranavegacao ul li a:hover, .barranavegacao ul li button:hover {
+            color: var(--cor-texto);
+        }
+        .barranavegacao ul ul {
+            display: none;
+            position: absolute;
+            top: 177%;
+            left: 50%;
+            background-color: var(--cor-fundo1);
+            border: 1px solid var(--cor-texto);
+            border-radius: 0 0 10px 10px;
+            transform: translateX(-50%);
+        }
+        .barranavegacao ul li:hover ul {
+            display: block;
+        }
+        .barranavegacao ul ul li {
+            padding: 10px;
+            margin: 0;
+        }
+        .barranavegacao ul ul li a {
+            white-space: nowrap;
+            padding: 10px 15px;
+        }
+
+        /* Conteúdo */
+        .corpo {
+            display: flex;
+            justify-content: center;
+            padding: 50px; 
+        }
+        .corpo1 {
+            display: flex;
+            justify-content: flex-start; 
+            width: 100%; 
+            margin-left: 0px; 
+            height: 365px;
+        }
+        .corpo1 img {
+            margin: 0 10px; 
+            border-radius: 20px;
+        }
+
+        /* Rodapé */
+        .cabecalhobaixo {
+                background: var(--cor-fundo1);
+                height: 500px;
+                width: auto;
+                justify-content: center;
+                display: flex;
+                position: relative;
+                top: 2000px;
+        }
+
+        .cabecalhobaixo1{
+                border-bottom: solid black 1px;
+                height: 250px;
+                width: 100%;
+                position: relative;
+                background: linear-gradient(to bottom, var(--cor-grad1), var(--cor-grad2));
+        }
+        .logo1 {
+                position: absolute;
+                top: 25px;
+                left: 40px;
+        }
+        .redessociais {
+                position: absolute;
+                top: 40px;
+                right: 60px;
+                width: 171px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+        }
+        .redessociais h5 {
+                font-size: 15px;
+                font-family: 'Poppins', sans-serif;
+        }
+        .redessociais a {
+                margin-left: 10px;
+        }
+        .redessociais a:hover {
+            color: var(--cor-texto);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Baixe o jogo</h1>
 
-        <a href="FlappyBird.rar" download>
-            <button class="download-button">Baixar Arquivo</button>
-        </a>
+    <div class="cabecalho">
+        <a href="principal.php" class="logo"><img src="Logo.png" alt="logo"></a>
+
+        <div class="cabecalho1">
+            <a href="sobre.php">SOBRE</a>
+            <a href="cadastrojunteseanos.php">JUNTE-SE A NÓS</a>
+            <a href="">REDES SOCIAIS</a>
+        </div>
+
+        <div class="search-box">
+            <input type="text" class="search-text" placeholder="O que procura?">
+            <button class="search-button"><i class="fa fa-search" style="color: #30b212;"></i></button>
+        </div>
     </div>
-</body>
-</html>
+
+    <div class="navegacao">
+        <nav class="barranavegacao">
+            <ul>
+                <li><a href="">PETS</a>
+                    <ul>
+                        <li><a href="">Cachorros</a></li>
+                        <li><a href="">Gatos</a></li>
+                        <li><a href="">Aves</a></li>
+                        <li><a href="">Roedores</a></li>
+                        <li><a href="">Répteis</a></li>
+                        <li><a href="">Anfíbios</a></li>
+                    </ul>
+                </li>
+                <li><a href="">DICAS</a>
+                    <ul>
+                        <li><a href="">Saúde</a></li>
+                        <li><a href="">Curiosidades</a></li>
+                        <li><a href="">Comportamento</a></li>
+                    </ul>
+                </li>
+                <li><a href="">PETSHOPS</a>
+                    <ul>
+                        <li><a href="">Sorocaba</a></li>
+                        <li><a href="">Votorantim</a></li>
+                    </ul>
+                </li>
+                <li><a href="">CLÍNICAS</a>
+                    <ul>
+                        <li><a href="">Cachorros</a></li>
+                        <li><a href="">Gatos</a></li>
+                        <li><a href="">Aves</a></li>
+                        <li><a href="">Roedores</a></li>
+                        <li><a href="">Répteis</a></li>
+                        <li><a href="">Anfíbios</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="corpo">
+        <div class="corpo1">
+            <a href="" class="dogsaude"><img src="cachorrovet.png" height="361" width="500" alt="cachorrosaude"></a>
+            <a href="" class="dicasdog"><img src="spitzcaramelo.png" height="361" width="390" alt="dicascachorro"></a>
+        </div>
+    </div>
+
+    <div class="cabecalhobaixo">
+        <div class="cabecalhobaixo1">
+            <a href="principal.php" class="logo1"><img src="logo.png" height="200" width="200" alt="logo"></a>
+            <div class="redessociais">
+                <h5>Redes sociais:</h5>
+                <a href="principal.php" class="instagram"><i class="fa fa-instagram"></i></a>
+                <a href="principal.php" class="facebook"><i class="fa fa-facebook"></i></a>
+                <a href="principal.php" class="twitter"><i class="fa fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
